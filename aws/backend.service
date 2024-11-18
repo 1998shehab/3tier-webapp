@@ -1,0 +1,14 @@
+[Unit]
+Description=node backend service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+WorkingDirectory=/usr/src/nodejsapp
+ExecStart=/bin/bash /usr/src/nodejsapp/start.sh
+
+[Install]
+WantedBy=multi-user.target
